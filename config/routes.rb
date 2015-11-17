@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # devise_for :users
   # resources :songs
   resources :albums
-  # resources :artists
+  resources :artists
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
   root 'welcome#index'
   get '/users/:user_id/user_albums/data' => "user_albums#data"
@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :user_albums
     resources :songs
-    resources :artists
 
     # get '/search' =>'search#index'
     # get '/songs/:id' => 'songs#show'
@@ -28,6 +27,14 @@ end
 #                          PATCH  /albums/:id(.:format)                          albums#update
 #                          PUT    /albums/:id(.:format)                          albums#update
 #                          DELETE /albums/:id(.:format)                          albums#destroy
+#                  artists GET    /artists(.:format)                             artists#index
+#                          POST   /artists(.:format)                             artists#create
+#               new_artist GET    /artists/new(.:format)                         artists#new
+#              edit_artist GET    /artists/:id/edit(.:format)                    artists#edit
+#                   artist GET    /artists/:id(.:format)                         artists#show
+#                          PATCH  /artists/:id(.:format)                         artists#update
+#                          PUT    /artists/:id(.:format)                         artists#update
+#                          DELETE /artists/:id(.:format)                         artists#destroy
 #         new_user_session GET    /users/sign_in(.:format)                       users/sessions#new
 #             user_session POST   /users/sign_in(.:format)                       users/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)                      users/sessions#destroy
@@ -61,14 +68,6 @@ end
 #                          PATCH  /users/:user_id/songs/:id(.:format)            songs#update
 #                          PUT    /users/:user_id/songs/:id(.:format)            songs#update
 #                          DELETE /users/:user_id/songs/:id(.:format)            songs#destroy
-#             user_artists GET    /users/:user_id/artists(.:format)              artists#index
-#                          POST   /users/:user_id/artists(.:format)              artists#create
-#          new_user_artist GET    /users/:user_id/artists/new(.:format)          artists#new
-#         edit_user_artist GET    /users/:user_id/artists/:id/edit(.:format)     artists#edit
-#              user_artist GET    /users/:user_id/artists/:id(.:format)          artists#show
-#                          PATCH  /users/:user_id/artists/:id(.:format)          artists#update
-#                          PUT    /users/:user_id/artists/:id(.:format)          artists#update
-#                          DELETE /users/:user_id/artists/:id(.:format)          artists#destroy
 #                    users GET    /users(.:format)                               users#index
 #                          POST   /users(.:format)                               users#create
 #                 new_user GET    /users/new(.:format)                           users#new
@@ -77,4 +76,3 @@ end
 #                          PATCH  /users/:id(.:format)                           users#update
 #                          PUT    /users/:id(.:format)                           users#update
 #                          DELETE /users/:id(.:format)                           users#destroy
-

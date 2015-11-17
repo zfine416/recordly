@@ -5,17 +5,18 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="3">Artist Name:</th>
+      <th>  </th>
+      <th>Delete</th>
     </tr>
   </thead>
 
   <tbody>
     <% @artists.each do |artist| %>
       <tr>
-        <a href=<%= artists_path %>> <%= artist.artist_name %> </h3>
-        <td><%= link_to 'Show', artist %></td>
-        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-        <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to artist.artist_name, artist %></td>
+        <td>  </td>
+        <td><%= link_to '  ', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove"%></td>
       </tr>
     <% end %>
   </tbody>

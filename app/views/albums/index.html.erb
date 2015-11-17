@@ -11,9 +11,13 @@
 
   <tbody>
     <% @albums.each do |album| %>
+    <tr>
+      <th>Album</th>
+      <th>Artist</th>
+    </tr>
       <tr>
-        <td></td>
-        <td><%= link_to album.album_name + '   by:   ' + album.artist.artist_name, album_path(album) %></td>
+        <td><%= link_to album.album_name, album_path(album) %></td>
+        <td><%= link_to album.artist.artist_name, artist_path(album.artist_id) %></td>
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
       </tr>
     <% end %>

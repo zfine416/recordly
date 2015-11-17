@@ -1,15 +1,15 @@
-// function gatherAlbumData(){
-// 	$.ajax({
-// 		url:'/albums.json'
-// 	}).done(function(data){
-// 		renderAlbumData(data);
-// 	})
-// }
+function gatherSongData(){
+	var id = location.pathname.split('/')[2];
+	$.ajax({
+		url:'/albums/'+ id + '.json'
+	}).done(function(data){
+		renderSongData(data);
+	})
+}
 
-// function renderAlbumData(data){
-// 	$.each(data,function(index, album){
-// 		debugger;
-// 		$('#albumlist').append('<li>'+ album.album_name +'</li>')
-// 	})
-// }
-// gatherAlbumData();
+function renderSongData(data){
+	$.each(data, function(index, song){
+		$('#songlist').append('<li>'+ song.song_name +'</li>')
+	})
+}
+gatherSongData();

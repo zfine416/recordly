@@ -1,6 +1,7 @@
 <ul class="myalbums">
 	<% @useralbums.each do |album| %>
-	<li><%= link_to album.album_name, album_path(album.id) %> <%= button_to "Delete", {:controller => :user_albums, :action => 'destroy', :id => album.id }, :method => :delete %></li>
+	<li><%= link_to album.album_name, album_path(album.id) %>
+	<%= link_to '', user_user_album_path(current_user.id, album.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove"%></li>
 	<% end %>
 </ul>
 

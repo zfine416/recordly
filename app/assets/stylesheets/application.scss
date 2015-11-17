@@ -38,7 +38,7 @@ $primary: #551A8B;
 	text-align: center;
 }
 
-.glyphicon-remove-circle{
+.glyphicon-remove{
 	transition:color .5s;
 	&:hover{
 		color:#F00;
@@ -56,4 +56,10 @@ $primary: #551A8B;
 
 .notice{
 	color: #F00;
+}
+
+table{
+	td{
+		padding: 5px;
+	}
 }
