@@ -1,0 +1,11 @@
+<h1>New Artist</h1>
+
+<form action="/artists" method="post">
+Artist Name:<input type="text" name="artist[artist_name]">
+<br>
+Genre: <input type="text" name="artist[genre]">
+<br>
+<input type="submit" value="submit">
+</form>
+
+<%= link_to 'Back', artists_path %>

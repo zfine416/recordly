@@ -1,0 +1,9 @@
+<ul class="myalbums">
+	<% @useralbums.each do |album| %>
+	<li><%= link_to album.album_name, album_path(album.id) %> <%= button_to "Delete", {:controller => :user_albums, :action => 'destroy', :id => album.id }, :method => :delete %></li>
+	<% end %>
+</ul>
+
+
+
+<%= link_to "Add a new Album to your Collection!!!", new_user_user_album_path(current_user.id) %>

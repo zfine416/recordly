@@ -1,0 +1,9 @@
+<form action="/users/<%= current_user.id %>/user_albums" method="post">
+	<select name="user_album[album_id]">
+		<% @albums.each do |album| %>
+		<option value=<%= album.id %>><%= album.album_name %> by <%= album.artist.artist_name %></option>
+		<% end %>
+	</select>
+	<input type="hidden" name="user_album[user_id]" value=<%= current_user.id %>>
+	<input type="submit" value="submit">
+</form>

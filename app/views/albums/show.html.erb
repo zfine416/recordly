@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+Album Name: <%= @album.album_name %>
+<br>
+Artist: <%= @album.artist.artist_name %>
+<br>
+Songs: <% @album.songs.each do |song| %>
+<%= song.song_name %>
+<% end %>
