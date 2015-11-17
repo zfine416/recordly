@@ -4,12 +4,8 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
+    # binding.pry
     @albums = Album.all
-
-    respond_to do |format|
-      format.html
-      format.json{ render json: @albums }
-    end
   end
 
   # GET /albums/1
