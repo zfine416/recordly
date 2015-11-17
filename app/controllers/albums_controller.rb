@@ -12,6 +12,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
+    @song = Song.new
     respond_to do |format|
       format.html
       format.json{ render json: @album.songs }

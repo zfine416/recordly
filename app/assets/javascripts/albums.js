@@ -1,3 +1,5 @@
+
+
 function gatherSongData(){
 	var id = location.pathname.split('/')[2];
 	$.ajax({
@@ -13,3 +15,4 @@ function renderSongData(data){
 	})
 }
 gatherSongData();
+

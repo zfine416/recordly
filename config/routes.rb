@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   # resources :songs
   resources :albums
   resources :artists
+  resources :songs
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
   root 'welcome#index'
   get '/users/:user_id/user_albums/data' => "user_albums#data"
 
   resources :users do
     resources :user_albums
-    resources :songs
+    
 
     # get '/search' =>'search#index'
     # get '/songs/:id' => 'songs#show'

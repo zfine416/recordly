@@ -8,3 +8,17 @@ Artist: <%= @album.artist.artist_name %>
 Tracks:
 <ol id="songlist"></ol>
 
+Add New Song
+<%= form_for @song, remote: true do |f| %>
+	<%= hidden_field(:song, :album_id, :value => @album.id) %>
+	<%= f.text_field :song_name %>
+	<%= f.number_field :track_number %>
+	<%= f.submit :submit %>
+<% end %>
+<!-- <form action="/songs.js" method="POST" data-remote="true" >
+	<input type="text" placeholder="Song Name" name="song[song_name]">
+	<input type="number" placeholder="Track Number" min="1" name="song[track_number]">
+	<input type="hidden" value=<%= @album.id %> name="song[album_id]">
+	<input type="submit" value="Add New">
+</form> -->
+

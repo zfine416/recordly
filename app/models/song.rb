@@ -3,7 +3,6 @@ class Song < ActiveRecord::Base
 	# belongs_to :artist
 	default_scope -> {order(album_id: :asc, track_number: :asc)}
 
-	validates :album_name, uniqueness: {case_sensitive: false}, presence: true
   	validates :track_number, numericality:{only_integer: true, greater_than: 0}
 
 	private

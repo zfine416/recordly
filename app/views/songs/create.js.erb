@@ -1,0 +1,7 @@
+
+$(document).on("ajax:complete", ".new_song", function(event, xhr, settings) {
+//    console.log("The javascript works");
+	console.log("<%= j render(@song) %>");
+    console.log('ajax completed!');
+});
+
