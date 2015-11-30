@@ -1,0 +1,10 @@
+
+<tr>
+	<td></td>
+	<!-- album -->
+	<td><%= link_to @user_album.album.album_name, album_path(@user_album.album.id) %></td>
+	<!-- artist -->
+	<td><%= link_to @user_album.album.artist.artist_name, artist_path(@user_album.album.artist.id) %></td>
+	<!-- delete -->
+	<td><%= link_to '', user_album_path(:id => @user_album.album.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %></td>
+</tr>

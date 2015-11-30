@@ -27,6 +27,8 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1/edit
   def edit
+    @album = Album.find(params[:id])
+    @artists = Artist.all
   end
 
   # POST /albums

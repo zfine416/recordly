@@ -50,7 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    user_user_albums_path(current_user.id)
+    user_albums_path
   end
 
   # The path used after sign up for inactive accounts.

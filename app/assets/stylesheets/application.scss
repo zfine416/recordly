@@ -23,7 +23,10 @@ $primary: #551A8B;
 }
 
 .navbar-right{
-	li{
+	form{
+		padding:15px;
+	}
+	.click{
 	padding-right: 20px;
 		&:hover{
 			background:#F00;
@@ -39,6 +42,7 @@ $primary: #551A8B;
 }
 
 .glyphicon-remove{
+	color: #F00;
 	transition:color .5s;
 	&:hover{
 		color:#F00;
@@ -47,9 +51,14 @@ $primary: #551A8B;
 }
 
 .myalbums{
+	width: 66%;
+	margin: 0 auto;
+	text-align: center;
 	li{
+		list-style: none;
 		a, form{
 			display: inline-block;
+			font-size: 18px;
 		}
 	}
 }
@@ -62,4 +71,7 @@ table{
 	td{
 		padding: 5px;
 	}
+}
+.header{
+	text-align:center;
 }

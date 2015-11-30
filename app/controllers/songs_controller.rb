@@ -25,13 +25,8 @@ class SongsController < ApplicationController
   # POST /songs.json
   def create
     @song = Song.new(song_params)
-    if @song.save
-      respond_to do |format|
-        format.html{ redirect_to album_path }
-        format.js
-      end
-    else
-       respond_to do |format|
+    respond_to do |format|
+      if @song.save
         format.html{ redirect_to album_path }
         format.js
       end

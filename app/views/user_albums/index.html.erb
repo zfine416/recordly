@@ -1,10 +1,30 @@
-<ul class="myalbums">
+<h1 class="header">My Album Collection</h1>
+
+<table class="myalbums">
+	<th>
+		<td>Album</td>
+		<td>Artist</td>
+		<td>Delete</td>
+	</th>
 	<% @useralbums.each do |album| %>
-	<li><%= link_to album.album_name, album_path(album.id) %>
-	<%= link_to '', user_user_album_path(current_user.id, album.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove"%></li>
-	<% end %>
-</ul>
+		<!-- album name -->
+	<tr>
+		<td></td>
+		<td>
+			<%= link_to album.album_name, album_path(album.id) %>
+		</td>
+		<!-- album artist -->
+		<td>
+			<%= link_to album.artist.artist_name, artist_path(album.artist.id)%>
+		</td>
+		<!-- album delete button -->
+		<td>
+			<%= link_to '', user_album_path(:id => album.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>
+		</td>
+	</tr>
+	<% end %>	
+</table>
 
-
-
-<%= link_to "Add a new Album to your Collection!!!", new_user_user_album_path(current_user.id) %>
+<%= render 'form' %>
+Cant find the album you are looking for?
+<%= link_to 'Add a new album to our Album Database', new_album_path %>

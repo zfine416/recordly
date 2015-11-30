@@ -1,4 +1,10 @@
 class Album < ActiveRecord::Base
+	include PgSearch
+	 pg_search_scope :search_by_name, 
+                  :against => [:album_name],
+                  :using => {
+                    :tsearch => {:prefix => true}
+                  }
 	has_many :user_albums
   	has_many :users, through: :user_albums
 	belongs_to :artist

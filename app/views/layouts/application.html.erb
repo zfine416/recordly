@@ -23,9 +23,15 @@
           <% if user_signed_in?%>
           <div class="navbar navbar-default">
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "My Albums", user_user_albums_path(current_user.id) %></li>
-              <li> <%= link_to current_user.email, edit_user_registration_path %></li>
-               <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+              <li>
+                <%= form_tag('\search', :method => "get", id: "search-form") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search All" %>
+                  <%= submit_tag "Search", :name => nil %>
+                <% end %>
+              </li>
+              <li class="click"><%= link_to "My Albums", user_albums_path%></li>
+              <li class="click"> <%= link_to current_user.email, edit_user_registration_path%></li>
+               <li class="click"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             </ul>
           </div>
           <%end%>
