@@ -12,11 +12,15 @@
       <tbody>
         <% @artists.each do |artist| %>
           <tr>
-            <td><%= artist.artist_name %></td>       
+            <!-- artist name -->
+            <td><%= artist.artist_name %></td>  
+            <!-- show artist     -->
             <td><%= link_to 'Show', artist, class: "btn btn-xs btn-primary"  %></td>
+            <!-- edit artist -->
             <td><%= link_to 'Edit', edit_artist_path(artist), class: "btn btn-xs btn-primary"  %></td>
+            <!-- delete artist -->
             <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  %></td>
-            <td><%= link_to 'Add To Favorites', edit_artist_path(artist), class: "btn btn-xs btn-primary"  %></td>        
+             
           </tr>
         <% end %>
       </tbody>
@@ -41,7 +45,7 @@
           <td><%= link_to 'Show', album, class: "btn btn-xs btn-primary"  %></td>
           <td><%= link_to 'Edit', edit_album_path(album), class: "btn btn-xs btn-primary"  %></td>
           <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  %></td>
-          <td><%= link_to 'Add To Favorites', edit_album_path(album), class: "btn btn-xs btn-primary"  %></td>        
+            
         </tr>
       <% end %>
     </tbody>
@@ -64,8 +68,7 @@
         <td><%= song.song_name %></td>    
         <td><%= link_to 'Show', song, class: "btn btn-xs btn-primary"  %></td>
         <td><%= link_to 'Edit', edit_song_path(song), class: "btn btn-xs btn-primary"  %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  %></td>
-        <td><%= link_to 'Add To Favorites', edit_song_path(song), class: "btn btn-xs btn-primary"  %></td>        
+        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger"  %></td>      
       </tr>
     <% end %>
   </tbody>
